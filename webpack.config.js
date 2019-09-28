@@ -8,8 +8,10 @@ const path = require('path');
 module.exports = {
   resolve: {
     alias: {
-      '@pages': path.resolve(__dirname, './src/pages/'),
       '@components': path.resolve(__dirname, './src/components/'),
+      '@services': path.resolve(__dirname, './src/services/'),
+      '@pages': path.resolve(__dirname, './src/pages/'),
+      '@utils': path.resolve(__dirname, './src/utils/'),
     },
   },
   entry: {
@@ -17,26 +19,29 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
-    hot: true
+    host: '127.0.0.1',
+    hot: true,
+    port: 3000,
   },
   performance: {},
   plugins: [
     new webpack.DefinePlugin({
-      'PRODUCT': JSON.stringify(false)
+      'PRODUCT': JSON.stringify(true)
     }),
     // 清除dist文件
     new CleanWebpackPlugin(),
     // 提取css文件
-    new ExtractTextPlugin("css/[name].[hash:8].css", {
+    new ExtractTextPlugin("css/[name].[hash].css", {
       allChunks: true
     }),
     new HtmlWebpackPlugin({
-      title: 'React start',
+      title: 'wesion console',
       inject: 'body',
       template: path.resolve(__dirname, './index-template.html'),
       collapseWhitespace: true, //删除空格、换行
     }),
     new webpack.NamedModulesPlugin(),
+    // 热更新
     new webpack.HotModuleReplacementPlugin(),
 
   ],

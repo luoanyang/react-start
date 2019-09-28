@@ -1,0 +1,15 @@
+.spin {
+  margin: 100px auto;
+  display: block;
+}
+
+.avatar-box {
+  padding: 0 24px;
+  float: right;
+}
+
+.filter-section {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}

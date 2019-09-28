@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HelloMessage  from '@pages/app.jsx';
+// import { Provider } from 'react-redux'
+import 'antd/dist/antd.css';
 import './index.css';
-
+import Routers from './router.jsx';
 
 ReactDOM.render(
-  <HelloMessage name="React DOM" />,
-  document.getElementById('app')
-);
+  <Routers />,
+  document.getElementById('root'));
