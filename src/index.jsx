@@ -5,6 +5,6 @@ import './index.css';
 
 
 ReactDOM.render(
-  <HelloMessage name="React DOM" />,
+  <HelloMessage name="React hello" />,
   document.getElementById('app')
 );
